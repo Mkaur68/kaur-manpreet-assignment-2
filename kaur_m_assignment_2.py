@@ -1,3 +1,23 @@
+"""
+File: kaur_m_assignment_2.py
+Description:
+  Recommends a PRF chequing account and computes the monthly fee
+  following the assignment rules.
+
+Constraints:
+  - Input prompts appear in the required order.
+  - Ask "student?" ONLY if age < 60.
+  - Avoid prohibited keywords: continue, break, exit()
+  - Prefer "Preferred" over "Ultimate" unless Ultimate is required.
+  - Output format: blank line, 40 dashes, recommendation, fee with $ and 2 decimals.
+
+How to run:
+  Interactive mode (what instructors expect):
+      python kaur_m_assignment_2.py
+
+  Test mode (prints pass/fail for the cases below):
+      python kaur_m_assignment_2.py test
+"""
 from dataclasses import dataclass
 
 # -----------------------------
