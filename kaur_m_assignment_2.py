@@ -33,3 +33,26 @@ def recommend_account(tx_count, non_prf_abm_used, e_transfer_used):
     return "Basic"
 
 account = recommend_account(debit_tx, uses_non_prf_abm, sends_etransfer)
+
+# 4) FEE CALCULATION
+def compute_monthly_fee(plan_name, cust_age, student_flag, avg_closing_balance):
+    fee = FEES[plan_name]
+    threshold = WAIVE_MIN[plan_name]
+
+    # Waive fee if balance meets threshold (where applicable)
+    if threshold is not None and avg_closing_balance >= threshold:
+        return 0.00
+
+    # Seniors (>=60)
+    if cust_age >= 60:
+        if plan_name == "Basic":
+            return 0.00
+        fee = fee * 0.70
+    else:
+        # Students (<60)
+        if student_flag:
+            fee = fee * 0.50
+
+    return round(fee, 2)
+
+monthly_fee = compute_monthly_fee(account, age, is_student, closing_balance)
