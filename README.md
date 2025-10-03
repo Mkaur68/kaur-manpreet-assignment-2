@@ -58,7 +58,7 @@ kaur-manpreet-assignment-2/
 Open a terminal in this folder and run:
 
 ```bash
-cd "/d/Bonus Tasks/F work/2025/9-Sept/Python Programming/kaur-manpreet-assignment-2"
+cd "Python Programming/kaur-manpreet-assignment-2"
 python kaur_m_assignment_2.py
 ```
 
